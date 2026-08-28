@@ -6,13 +6,13 @@ const path = require('path');
 
 const app = express();
 app.use(cors());
-app.use(express.static(__dirname + '/dist/my_app/browser'));
+app.use(express.static(__dirname + '/dist/my_app/browser/browser'));
 console.log('📂 __dirname:', __dirname);
 const CONTACTS_COLLECTION = 'contacts';
 app.use(bodyParser.json());
 
 const fs = require('fs');
-const testPath = path.join(__dirname, 'dist', 'my_app', 'browser');
+const testPath = path.join(__dirname, 'dist', 'my_app', 'browser', 'browser');
 console.log('📂 Проверяем путь:', testPath);
 
 if (fs.existsSync(testPath)) {
@@ -148,5 +148,5 @@ app.delete('/api/contacts/:id', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/dist/my_app/browser/index.html');
+  res.sendFile(__dirname + '/dist/my_app/browser/browser/index.html');
 });

@@ -6,7 +6,10 @@ import { Contact } from './contact';
   providedIn: 'root',
 })
 export class ServiceAPI {
-  private APIUrl = 'http://localhost:8080/api/contacts';
+  private APIUrl =
+    window.location.hostname === 'localhost'
+      ? 'http://localhost:8080/api/contacts'
+      : '/api/contacts';
 
   constructor(private http: HttpClient) {}
 

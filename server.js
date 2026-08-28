@@ -7,6 +7,7 @@ const path = require('path');
 const app = express();
 app.use(cors());
 app.use(express.static(__dirname + '/dist/my_app/browser'));
+console.log('📂 __dirname:', __dirname);
 const CONTACTS_COLLECTION = 'contacts';
 app.use(bodyParser.json());
 

@@ -28,7 +28,9 @@ let client;
 
 async function startServer() {
   try {
-    const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/test';
+    const uri =
+      process.env.MONGODB_URI ||
+      'mongodb+srv://render_user:Render2026@cluster0.zz9ctrr.mongodb.net/?appName=Cluster0';
     client = await MongoClient.connect(uri, { serverSelectionTimeoutMS: 5000 });
     db = client.db();
     console.log('База данных подключена');

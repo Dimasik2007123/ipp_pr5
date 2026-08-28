@@ -11,6 +11,18 @@ console.log('📂 __dirname:', __dirname);
 const CONTACTS_COLLECTION = 'contacts';
 app.use(bodyParser.json());
 
+const fs = require('fs');
+const testPath = path.join(__dirname, 'dist', 'my_app', 'browser');
+console.log('📂 Проверяем путь:', testPath);
+
+if (fs.existsSync(testPath)) {
+  console.log('✅ Папка существует');
+  const files = fs.readdirSync(testPath);
+  console.log('📄 Содержимое папки:', files);
+} else {
+  console.log('❌ Папка НЕ существует');
+}
+
 let db;
 let client;
 

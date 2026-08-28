@@ -6,7 +6,7 @@ const path = require('path');
 
 const app = express();
 app.use(cors());
-app.use(express.static(__dirname + '/dist/my_app/browser'));
+app.use(express.static(__dirname + '/dist'));
 const CONTACTS_COLLECTION = 'contacts';
 app.use(bodyParser.json());
 
@@ -135,5 +135,5 @@ app.delete('/api/contacts/:id', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/dist/my_app/browser/index.html');
+  res.sendFile(__dirname + '/dist/index.html');
 });
